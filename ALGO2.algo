@@ -1,0 +1,35 @@
+ALGORITHM algorithm_name
+VAR
+ set1 : ARRAY_OF INTEGER[5] ;  
+ set2 : ARRAY_OF INTEGER[5];
+ set_3: ARRAY_OF INTEGER [];
+ set4 : ARRAY_OF INTEGER[];
+ i,j,a,b, sum ,sum1 ,sum2 ,sumd , sumd1,sumd2 , count ,count1: INTEGER ;
+BEGIN
+  sum:=0;sum1:=0;sum2:=0;sumd:=0;sumd1:=0;sumd2=0;count:=0;count1:=0;
+  set1:={3, 1, 7, 9} ;
+  set2:={2, 4, 1, 9, 3} ;
+ FOR i FROM 0 TO tab.length-1 STEP 1  DO
+  FOR j FROM 0 TO tab.length-1 STEP 1  DO 
+    IF (set1[i]=set2[j]) THEN
+      sum1=sum1+set1[i];
+      sum2=sum2+set2[j];
+      sum=sum1+sum2;
+      count=count+1;
+    else IF (set1[i]<>set2[j]) THEN
+          sumd1=sumd1+set1[i];
+          sumd2=sumd2+set2[j];
+          sumd=sumd1+sumd2;
+          count1:=count1+1;
+    END_IF
+    END_IF
+//affichier nbres communs
+    FOR a FROM 0 TO count STEP 1  DO
+       write (set_3[a]);
+    END_FOR
+//affichier nbres diffrents    
+    FOR b FROM 0 TO count1 STEP 1  DO
+      write (set4[b]);
+    END_FOR
+  
+END
